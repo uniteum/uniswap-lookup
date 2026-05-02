@@ -10,7 +10,7 @@ initcodehash=$(cast keccak "$initcode")
 
 argshash=$(cast keccak "$(cast abi-encode "f((uint256,address)[])" "[$kvs]")")
 
-# XOR argshash ^ variant (bc has no XOR, so use python)
+# XOR argshash ^ variant (256-bit, too wide for bash arithmetic)
 salt=$(python3 -c "print(f'0x{int(\"$argshash\",16) ^ int(\"$variant\",16):064x}')")
 
 home=$(cast create2 --deployer "$deployer" --salt "$salt" --init-code "$initcode")
