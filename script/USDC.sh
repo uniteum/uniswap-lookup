@@ -6,12 +6,11 @@ echo "initcodehash=$initcodehash"
 kvs=$(yq --from-file script/kvs.yq script/USDC.yml | paste -sd,)
 argshash=$(cast keccak "$(cast abi-encode "f((uint256,address)[])" "[$kvs]")")
 echo "argshash=$argshash"
+
 variant=0x000000000000000000000000000000000000000000000000000000007fa78ab1
 input=$(cast calldata "make((uint256,address)[],uint256)" "[$kvs]" "$variant")
-
 # XOR argshash ^ variant (256-bit, too wide for bash arithmetic)
 salt=$(python3 -c "print(f'0x{int(\"$argshash\",16) ^ int(\"$variant\",16):064x}')")
-
 home=$(cast create2 --deployer "$deployer" --salt "$salt" --init-code "$initcode")
 echo "home=$home"
 
