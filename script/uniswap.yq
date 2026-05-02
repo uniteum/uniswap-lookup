@@ -1,0 +1,10 @@
+# Extract (chainId, <property>) pairs from a Uniswap deployments YAML and
+# emit them as a comma-separated list of `(uint,address)` tuples.
+#
+# Usage:
+#   yq "\"PoolManager\" as \$property | $(cat script/uniswap.yq)" script/uniswap.yml
+. | to_entries
+  | map(select(.value[$property] != null))
+  | sort_by(.key | tonumber)
+  | map("(" + .key + "," + .value[$property] + ")")
+  | join(",")
