@@ -1,0 +1,66 @@
+# Wrapped Native Token — Canonical ERC-20 Addresses (EVM mainnets and testnets)
+#
+# Sources:
+#   Uniswap SDK:  https://github.com/Uniswap/sdks/blob/main/sdks/sdk-core/src/entities/weth9.ts
+#   ethereum-lists/chains: https://github.com/ethereum-lists/chains
+#   Plus per-chain official docs (cited inline where non-obvious).
+#
+# Chain ID → canonical ERC-20 wrapper for the chain's native gas token
+# (WETH on Ethereum, WBNB on BSC, WPOL on Polygon, WAVAX on Avalanche,
+# WHYPE on HyperEVM, WMON on Monad, WXDC on XDC, wS on Sonic, etc.).
+# Bridged variants from other chains (e.g. Wormhole-WBNB on Ethereum) are
+# NOT included.
+#
+# OP Stack chains share the predeploy 0x4200000000000000000000000000000000000006
+# for WETH — that's a protocol convention, not a coincidence. Morph similarly
+# uses the predeploy 0x5300000000000000000000000000000000000011.
+#
+# Special cases:
+#   - Celo (42220, 11142220): the native CELO token is itself ERC-20-conformant
+#     at the address below — no separate "wrapped" contract is needed.
+#   - Codex (81224): stablecoin-native L2; gas paid in USDC rather than ETH,
+#     so there is no canonical "wrapped native" in the WETH9 sense. Omitted.
+#
+# Addresses are quoted so YAML serializers don't mangle them.
+
+# --- Mainnets ---
+1: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2" # Ethereum — WETH
+10: "0x4200000000000000000000000000000000000006" # OP Mainnet — WETH (OP Stack predeploy)
+50: "0x951857744785e80e2de051c32ee7b25f9c458c42" # XDC — WXDC
+56: "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c" # BNB Smart Chain — WBNB
+130: "0x4200000000000000000000000000000000000006" # Unichain — WETH (OP Stack predeploy)
+137: "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270" # Polygon PoS — WPOL (formerly WMATIC; same contract)
+143: "0x3bd359c1119da7da1d913d1c4d2b7c461115433a" # Monad — WMON (native is MON, not ETH)
+324: "0x5aea5775959fbc2557cc8789bc1bf90a239d9a91" # ZKsync Era — WETH
+480: "0x4200000000000000000000000000000000000006" # World Chain — WETH (OP Stack predeploy)
+999: "0x5555555555555555555555555555555555555555" # HyperEVM — WHYPE (1:1 redeemable system contract)
+1868: "0x4200000000000000000000000000000000000006" # Soneium — WETH (OP Stack predeploy)
+2818: "0x5300000000000000000000000000000000000011" # Morph — WETH (L2WETH predeploy)
+8453: "0x4200000000000000000000000000000000000006" # Base — WETH (OP Stack predeploy)
+42161: "0x82af49447d8a07e3bd95bd0d56f35241523fbab1" # Arbitrum One — WETH
+42220: "0x471ece3750da237f93b8e339c536989b8978a438" # Celo — native CELO is itself ERC-20 (no separate wrapper)
+43114: "0xb31f66aa3c1e785363f0875a1b74e27b85fd66c7" # Avalanche C-Chain — WAVAX
+57073: "0x4200000000000000000000000000000000000006" # Ink — WETH (OP Stack predeploy)
+59144: "0xe5d7c2a44ffddf6b295a15c148167daaaf5cf34f" # Linea — WETH
+81457: "0x4300000000000000000000000000000000000004" # Blast — WETH (rebasing)
+7777777: "0x4200000000000000000000000000000000000006" # Zora — WETH (OP Stack predeploy)
+# 81224 — Codex — omitted: stablecoin-native L2, gas paid in USDC rather than ETH
+
+# --- Testnets ---
+300: "0x20b28b1e4665fff290650586ad76e977eab90c5d" # ZKsync Era Sepolia — WETH (syncswap WETH9)
+1301: "0x4200000000000000000000000000000000000006" # Unichain Sepolia — WETH (OP Stack predeploy)
+2910: "0x5300000000000000000000000000000000000011" # Morph Hoodi — WETH (L2WETH predeploy)
+4801: "0x4200000000000000000000000000000000000006" # World Chain Sepolia — WETH (OP Stack predeploy)
+10143: "0x760afe86e5de5fa0ee542fc7b7b713e1c5425701" # Monad Testnet — WMON
+11142220: "0x471ece3750da237f93b8e339c536989b8978a438" # Celo Sepolia — native CELO ERC-20 (same address as mainnet)
+11155111: "0xfff9976782d46cc05630d1f6ebab18b2324d6b14" # Ethereum Sepolia — WETH
+11155420: "0x4200000000000000000000000000000000000006" # OP Sepolia — WETH (OP Stack predeploy)
+43113: "0xd00ae08403b9bbb9124bb305c09058e32c39a48c" # Avalanche Fuji — WAVAX
+57054: "0x039e2fb66102314ce7b64ce5ce3e5183bc94ad38" # Sonic Blaze Testnet — wS (per Sonic docs, same as mainnet)
+84532: "0x4200000000000000000000000000000000000006" # Base Sepolia — WETH (OP Stack predeploy)
+421614: "0x980b62da83eff3d4576c647993b0c1d7faf17c73" # Arbitrum Sepolia — WETH
+763373: "0x4200000000000000000000000000000000000006" # Ink Sepolia — WETH (OP Stack predeploy)
+# 51    — XDC Apothem      — unverified, multiple candidate addresses in the wild
+# 80002 — Polygon Amoy     — unverified canonical WPOL/WMATIC; check amoy.polygonscan.com
+# 998   — HyperEVM Testnet — unverified WHYPE address; check Hyperliquid docs
+# 59141 — Linea Sepolia    — unverified WETH address; check sepolia.lineascan.build

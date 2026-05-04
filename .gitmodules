@@ -1,0 +1,9 @@
+[submodule "lib/forge-std"]
+	path = lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
+[submodule "lib/crucible"]
+	path = lib/crucible
+	url = git@github.com:uniteum/crucible.git
+[submodule "lib/ilookup"]
+	path = lib/ilookup
+	url = git@github.com:uniteum/ilookup.git
