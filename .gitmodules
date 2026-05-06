@@ -5,6 +5,7 @@
 	path = lib/crucible
 	url = git@github.com:uniteum/crucible.git
 	branch = predict
+	update = merge
 [submodule "lib/ilookup"]
 	path = lib/ilookup
 	url = git@github.com:uniteum/ilookup.git
