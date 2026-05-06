@@ -10,7 +10,7 @@ deployer=0xadDf9ab01bC368d791666A9708381ca7C056e220
 
 # (chainId, V4 PoolManager) pairs from script/uniswap.yml, formatted as a
 # Solidity tuple-array literal: "(1,0x...),(8453,0x...),...".
-kvs=$(property=PoolManager yq --from-file script/uniswap.yq script/uniswap.yml)
+kvs=$(property=PoolManager yq --from-file script/uniswap.yq io/uniswap.yml)
 
 # Vanity-mining inputs (captured into the yml).
 mask=0xffff00000000000000000000000000000000ffff
