@@ -14,7 +14,7 @@ deployer=0xadDf9ab01bC368d791666A9708381ca7C056e220
 
 # (chainId, USDC) pairs from script/USDC.yml, formatted as a Solidity
 # tuple-array literal: "(1,0x...),(8453,0x...),...".
-kvs=$(yq --from-file script/kvs.yq script/USDC.yml | paste -sd,)
+kvs=$(yq --from-file script/kvs.yq io/USDC/USDC.yml | paste -sd,)
 
 # Vanity-mining inputs — TODO: choose a target and re-mine for the new
 # deployer. The legacy script's mask/target/variant were mined against
