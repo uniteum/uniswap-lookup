@@ -6,7 +6,7 @@ set -euo pipefail
 source "$(git rev-parse --show-toplevel)/lib/crucible/script/clone.sh"
 
 # Reflector prototype.
-deployer=0xBDbd73f71A85feccbB20DBB25B21EaD9a457E090
+deployer=0xBDbd6217ADFe1f3AE9fd4eC4D82d62A3a9baE090
 
 peg=0xC5DC3461ed6653dbC5E6A8bCDcF0354fF178E300 # USDC Lookup
 symbol=1xUSDC
@@ -17,4 +17,4 @@ target=0x05dd500000000000000000000000000000000000
 
 clone_predict USDCReflector "$deployer" \
     "address,string" "$peg" "$symbol" \
-    0x00000000000000000000000000000000000000000000000000000000017a682c
+    0x00000000000000000000000000000000000000000000000000000000010dfaf1
