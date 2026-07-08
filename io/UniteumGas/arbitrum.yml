@@ -1,0 +1,32 @@
+contract: 0xa0c5e912e1e64800000000000000000000000000
+requester:
+  name: "Paul Reinholdtsen"
+  email: "paul@bitsy.services"
+project:
+  name: "Uniteum Mimicry"
+  website: "https://uniteum.one/unispring/mimicry/"
+  email: "team@uniteum.one"
+  sector: "Personalized Wrapped Token"
+logo: "https://uniteum.one/assets/images/uniteum-eth.svg"
+description: |
+  1:1 ETH mirror minted by the Mimicry prototype on Uniswap V4.
+  Single-tick position at tick 0 pegs price inside a hard 1-bp
+  corridor [1.0, 1.0001). Fully collateralized by ETH locked in a
+  Fountain clone with no decrease-liquidity path. No governance, no
+  fees beyond the 0.01% swap fee.
+coinmarketcap: "https://dex.coinmarketcap.com/token/ethereum/0xa0C5E912e1e64618401D590ED872642A64200927/"
+coingecko: "https://www.geckoterminal.com/eth/pools/0x98914a9e6f2d97d37edb9488c9fc06adac83bde637106c4d24ee6e18655898eb"
+socials:
+  whitepaper: ""
+  medium: ""
+  github: "https://github.com/uniteum/unispring"
+  reddit: "https://www.reddit.com/r/uniteum/"
+  telegram: ""
+  slack: ""
+  wechat: ""
+  facebook: ""
+  linkedin: "https://www.linkedin.com/in/paulreinholdtsen/"
+  twitter: "https://x.com/uniteum1"
+  discord: ""
+  bitcointalk: ""
+  opensea: ""

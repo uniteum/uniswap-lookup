@@ -4,6 +4,7 @@
 [submodule "lib/crucible"]
 	path = lib/crucible
 	url = git@github.com:uniteum/crucible.git
+	branch = main
 [submodule "lib/ilookup"]
 	path = lib/ilookup
 	url = git@github.com:uniteum/ilookup.git
